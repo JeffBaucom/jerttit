@@ -5,9 +5,5 @@
 			'ui.router',
 			'ui.bootstrap',
 			'ngMaterial'
-
-
-
-
 		]);
 })();
