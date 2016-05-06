@@ -8,6 +8,7 @@
 			$stateProvider
 				.state('jerttit',  {
 					url: '/',
+					templateUrl: '/views/jert.html',
 					controller: 'jertCtrl',
 					template: '<ui-view/>'
 				})
