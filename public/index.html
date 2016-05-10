@@ -6,8 +6,14 @@
 </head>
 
 <body>
-	<div ui-view></div>
+	<body ng-app="jerttit">
+  <div ui-view></div>
 
+  <script type="text/ng-template" id="/wrapper.html">
+    <div ui-view="header"></div>
+    <div ui-view="body"></div>
+    <div ui-view="footer"></div>
+  </script>
 
 	<!-- Library Dependencies -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
@@ -26,10 +32,6 @@
 	<!-- our Angular files -->
 	<script src="scripts/app.js"></script>
 	<script src="scripts/routes.js"></script>
-	<script src="scripts/jertController.js"></script>
-	<script src="scripts/dashboardController.js"></script>
-	<script src="scripts/profileController.js"></script>
-	<script src="scripts/subController.js"></script>
 
 
 
