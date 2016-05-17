@@ -45,11 +45,10 @@ app.use(express.static(__dirname + '/public'));
 //var jertsRoutes = require('./app/routes/jerts')(app, express, jerts);
 //app.use('/api/jerts', jertsRoutes);
 
-  app.get('/api/jerts', function(req, res) {
+  app.get('/api/jerts', function(req, res, next) {
       jerts.find({}).toArray(function(err, docs) {
         if (err) res.send(err);
         res.json(docs);
-          //db.close();
       });
 
   });
@@ -67,11 +66,13 @@ app.use(express.static(__dirname + '/public'));
 
         jerts.insert(newjert, function(err, result) {
           if (err) res.send(err);
+          res.json({
+            message: "Jert inserted",
+          });
           console.log("new Jert inserted");
         });
 
-        db.close();
-        connectDB();
+        return;
       }
 
   });
